@@ -163,8 +163,8 @@
 <section class="section wrap" id="latihan-ujian" aria-labelledby="ujudul">
   <p class="eyebrow">Misi tambahan / Siap ujian</p>
   <h2 id="ujudul">Latihan Ujian Puisi Rakyat</h2>
-  <p class="intro"><strong>36 soal baru:</strong> 30 pilihan ganda dan 6 uraian. Latih pantun, gurindam, dan syair, dari mengenali rima sampai menulis bait sendiri.</p>
-  <div class="path"><p><strong>Nara:</strong> “Mulai dari Paket A kalau masih suka tertukar. Di Paket B, baca baitnya dulu sebelum menebak!”</p><p><strong>Bima:</strong> “Kalau waktumu terbatas, langsung kerjakan Paket C tanpa melihat pembahasan. Setelah itu, ulangi topik yang masih salah.”</p></div>
+  <p class="intro"><strong>60 soal latihan:</strong> 50 pilihan ganda dan 10 uraian. Paket A–C untuk pemanasan dan simulasi; Paket D–E menambah latihan ragam pantun dan revisi bait.</p>
+  <div class="path"><p><strong>Nara:</strong> “Kalau masih tertukar jenis pantun, coba Paket D. Cari petunjuk di bagian isi, bukan hanya di sampiran.”</p><p><strong>Bima:</strong> “Sudah coba simulasi di Paket C? Lanjutkan ke Paket E. Perbaiki satu larik, lalu baca lantang untuk mengecek bunyi dan pesannya.”</p></div>
   <p class="hint">Pilih satu jawaban per soal. Tekan <strong>Cek jawaban paket</strong> setelah selesai. Tulis uraian di buku, lalu buka contoh jawaban. Skor otomatis hanya untuk pilihan ganda.</p>
   <noscript><p class="nojs">Aktifkan JavaScript untuk membuka paket latihan. Kamu juga bisa mengerjakan <a href="#kuis">Kuis Detektif Rima</a> di atas dan mengeceknya dengan kunci.</p></noscript>
   <div id="paket-ujian"></div>
@@ -227,6 +227,50 @@ const paket=[
 ['Tulis satu pantun nasihat tentang kebiasaan membaca. Buat empat larik: dua sampiran dan dua isi. Tunjukkan dua pasangan rima akhir.','Contoh: “Jalan pagi melihat pelangi, / Pulang membawa daun pandan, / Biasakan membaca tiap pagi, / Buku menambah pengetahuan.” Sampiran: larik 1–2. Isi: larik 3–4. Rima: pelangi–pagi (-gi) dan pandan–pengetahuan (-an).'],
 ['Untuk mengajak teman jujur saat mengerjakan tugas, pilih Teks IV atau V. Kutip satu frasa dan jelaskan dampaknya bagi teman yang mendengarkan.','Contoh: Saya memilih Teks V. Frasa “kepercayaan akan tumbuh subur” membantu teman melihat manfaat jujur: orang lain makin percaya kepada kita. Teks IV juga bisa dipilih jika kamu mengutip perumpamaannya dan menjelaskan pengaruhnya.']
 ]}];
+// Misi lanjutan: ragam pantun dan bengkel revisi.
+Object.assign(teks,{
+  D1:['Ke pasar pagi membeli ikan,','Ikan dibawa di dalam peti,','Kalau meminjam, kembalikan,','Agar kawan tetap senang hati.'],
+  D2:['Burung kenari di pohon jati,','Tupai melompat di tepi kali,','Kucing berdasi tampak teliti,','Saat rapat, mengeong sekali.'],
+  D3:['Naik sepeda ke rumah paman,','Singgah sebentar membeli roti,','Punya jarum, tak untuk jahitan,','Menunjuk waktu tak berhenti.'],
+  D4:['Di balik pagar tumbuh kemangi,','Dekat jendela ada melati,','Kuingat Ibu setiap pagi,','Hangat pelukmu lekat di hati.'],
+  D5:['Pergi ke ladang mencari pandan,','Di tepi jalan tumbuh melati,','Persahabatan bagai jembatan,','Menghubungkan dua hati.'],
+  D6:['Berjalan pagi melihat pelangi,','Di dekat pagar tumbuh melati,','Syukuri nikmat setiap pagi,','Ingat karunia Tuhan di hati.'],
+  E1:['Di tepi kebun tumbuh kemangi,','Di dekat pagar ada melati,','Jaga kebersihan setiap pagi,','Pungut sampah di dalam kelas.'],
+  E2:['Jika teman berbagi makanan,','Pagi cerah di tepi jalan.'],
+  E3:['Benih ditanam di halaman,','Kami menyiram bergantian,','…','Kami pun senang melihat tanaman.']
+});
+paket.push(
+{id:'paket-d',judul:'Paket D · Detektif ragam pantun',intro:'Baca Teks D1–D6. Untuk menentukan ragam, perhatikan tujuan larik isi, bukan benda yang disebut di sampiran.',teks:['D1','D2','D3','D4','D5','D6'],pg:[
+['Teks D1: ragam apa yang paling tepat?',['Jenaka','Nasihat','Kasih sayang','Teka-teki'],1,'“Kalau meminjam, kembalikan” mengajarkan kebiasaan baik. Ikan dan peti hanya ada di sampiran.'],
+['Teks D2: ragam apa yang paling tepat?',['Agama','Kiasan','Nasihat','Jenaka'],3,'Kucing berdasi saat rapat lalu mengeong adalah kejutan yang dimaksudkan untuk menghibur.'],
+['Teks D3: ragam apa yang paling tepat?',['Teka-teki','Kasih sayang','Nasihat','Jenaka'],0,'Dua larik isi memberi petunjuk tentang suatu benda tanpa langsung menyebut namanya.'],
+['Teks D4: ragam apa yang paling tepat?',['Agama','Jenaka','Kasih sayang','Teka-teki'],2,'Mengingat Ibu dan hangat pelukannya menunjukkan rasa sayang kepada keluarga.'],
+['Teks D5: ragam apa yang paling menonjol?',['Jenaka','Kiasan','Teka-teki','Agama'],1,'Kata “bagai” menandai perumpamaan: persahabatan dibandingkan dengan jembatan.'],
+['Teks D6: ragam apa yang paling tepat?',['Kasih sayang','Teka-teki','Jenaka','Agama'],3,'Dua larik isi mengajak kita bersyukur kepada Tuhan.'],
+['Teks D3: benda apa yang paling cocok dengan semua petunjuk?',['Jam berjarum','Jarum jahit','Penggaris','Kalender dinding'],0,'Jam berjarum punya jarum yang menunjukkan waktu, bukan untuk menjahit.'],
+['Teks D5: apa maksud “menghubungkan dua hati”?',['Dua orang harus melewati sungai.','Seorang teman perlu membangun jembatan.','Persahabatan dapat membuat dua orang merasa dekat.','Kita hanya bisa berteman dengan tetangga.'],2,'Jembatan menghubungkan dua tempat. Dalam bait ini, gambaran itu membantu kita memahami bagaimana persahabatan mendekatkan dua orang.'],
+['Pantun mana paling cocok untuk membuka permainan tebak benda di kelas?',['Teks D4','Teks D3','Teks D6','Teks D1'],1,'Pendengar dapat ikut bermain dengan menafsirkan petunjuk pada dua larik isi Teks D3.'],
+['Apa yang sama pada Teks D1 dan D6, walau ragamnya berbeda?',['Isinya menyatakan nasihat atau ajakan.','Sampirannya memberi petunjuk tentang jam.','Semua lariknya berima a–a–a–a.','Keduanya ditujukan untuk membuat orang tertawa.'],0,'D1 menyarankan mengembalikan barang pinjaman; D6 mengajak bersyukur. Keduanya mendorong tindakan, tetapi tujuannya berbeda.']
+],u:[
+['Bandingkan tujuan Teks D2 dan D3. Kutip satu potongan larik isi dari masing-masing teks, lalu jelaskan reaksi yang diharapkan dari pendengar.','D2 ingin menghibur: “Saat rapat, mengeong sekali” memberi kejutan lucu. D3 ingin mengajak pendengar menebak: “Menunjuk waktu tak berhenti” memberi petunjuk tentang jam.'],
+['Jelaskan mengapa Teks D5 disebut pantun kiasan. Pakai pola “Saya menyebutnya … karena …; ini membantu pembaca …”.','Saya menyebutnya pantun kiasan karena “Persahabatan bagai jembatan” memakai perumpamaan. Ini membantu pembaca membayangkan persahabatan mendekatkan dua orang, seperti jembatan menghubungkan dua tempat.']
+]},
+{id:'paket-e',judul:'Paket E · Bengkel perbaikan bait',intro:'Baca tiga draf E1–E3. Saat memilih revisi, periksa dua hal: bunyi akhir dan hubungan makna.',teks:['E1','E2','E3'],pg:[
+['Draf E1: pasangan larik mana yang belum cocok untuk pantun a–b–a–b?',['1 dan 3','1 dan 2','2 dan 4','3 dan 4'],2,'Larik 2 berakhir dengan melati (-ti), tetapi larik 4 berakhir dengan kelas (-as). Larik 1 dan 3 sudah sama-sama berbunyi -gi.'],
+['Draf E1: ganti larik 4 agar rima dan pesan sama-sama terjaga.',['Kelas pun bersih, senanglah hati.','Layang-layang terbang tinggi.','Pungut kertas di dalam kelas.','Pulang membawa setangkai melati.'],0,'Hati berima -ti dengan melati, dan larik ini menunjukkan hasil menjaga kebersihan kelas. Pilihan terakhir berima tetapi keluar dari topik.'],
+['Draf E2: mengapa larik 2 belum tepat untuk gurindam?',['Larik 2 tidak berakhir dengan bunyi -an.','Larik 1 tidak mempunyai syarat.','Gurindam wajib memakai empat larik.','Larik 2 tidak menunjukkan akibat dari kebiasaan berbagi.'],3,'Bunyi -an sudah berulang, tetapi cuaca pagi bukan akibat dari berbagi makanan.'],
+['Draf E2: ganti larik 2 agar syarat dan akibatnya jelas, serta rimanya cocok.',['Teman pulang membawa roti.','Kawan merasa diperhatikan.','Bunga tumbuh di halaman.','Makanan dibeli setiap pagi.'],1,'Merasa diperhatikan merupakan akibat yang masuk akal. Makanan dan diperhatikan sama-sama berakhir dengan bunyi -an.'],
+['Draf E3: larik 3 mana yang melanjutkan cerita serta menjaga rima syair?',['Daun tumbuh perlahan-lahan.','Kami pergi ke pasar pagi.','Seekor kupu terbang tinggi.','Kawan lama mengirim ucapan.'],0,'Larik itu menunjukkan perkembangan benih setelah disiram, dengan bunyi -an yang konsisten.'],
+['Mengapa larik “Benih ditanam di halaman” pada Draf E3 bukan sampiran?',['Karena tidak mempunyai kata akhir.','Karena jumlah suku katanya kurang.','Karena menunjukkan awal cerita yang dilanjutkan larik lain.','Karena menyebut tanaman, bukan nasihat.'],2,'Menanam benih adalah peristiwa awal. Menyiram dan melihat tanaman tumbuh adalah kelanjutannya.'],
+['Manakah urutan isi pantun yang paling jelas: (A) Agar kelas nyaman dipakai. (B) Ayo rapikan bangku bersama.',['A lalu B, agar hasil muncul lebih dulu.','B lalu A, agar tindakan disusul tujuannya.','Pakai A saja, karena ajakan tidak perlu tindakan.','Pakai B dua kali, agar tujuannya tidak perlu ditulis.'],1,'“Ayo rapikan” menyebut tindakan yang diminta. “Agar kelas nyaman” menjelaskan tujuannya.'],
+['Berapa suku kata pada larik “Kami menyiram bergantian”?',['Tujuh','Delapan','Sepuluh','Sembilan'],3,'Ucapkan ka-mi / me-nyi-ram / ber-gan-ti-an. Hitung setiap bagian yang terucap.'],
+['Jika kata akhir ditulis “hati!” dan “melati.”, apa yang diperiksa untuk menentukan rima?',['Bunyi -ti saat kedua kata diucapkan.','Tanda seru dan tanda titik.','Jumlah huruf pada seluruh larik.','Makna “hati” dan “melati”.'],0,'Tanda baca dapat memberi petunjuk jeda atau nada, tetapi rima akhir ditentukan oleh bunyi kata.'],
+['Apa urutan paling membantu saat merevisi bait?',['Ganti semua kata akhir tanpa membaca makna.','Buat larik lebih panjang, lalu abaikan bentuk.','Periksa bentuk dan isi, baca lantang untuk mengecek rima, lalu perbaiki bagian yang belum cocok.','Ubah judul saja karena isi tidak perlu diperiksa.'],2,'Revisi yang baik memeriksa bentuk, hubungan makna, dan bunyi. Lalu perbaiki bagian tertentu, bukan semuanya sekaligus.']
+],u:[
+['Perbaiki larik 4 Draf E1 dengan pilihanmu sendiri. Terangkan mengapa larik barumu cocok dari sisi bunyi dan pesan.','Contoh: “Agar kelas nyaman ditempati.” Kata ditempati berima -ti dengan melati. Larik ini menjelaskan mengapa menjaga kebersihan itu penting: kelas jadi nyaman digunakan.'],
+['Tulis satu bait syair tentang kerja sama sebelum pentas kelas. Gunakan empat larik isi dengan pola a–a–a–a. Garisbawahi bunyi akhir dan cek apakah setiap larik meneruskan cerita.','Contoh: “Sore itu kami latihan, / Masing-masing siapkan peran, / Bila lupa, kawan ingatkan, / Kami pun siap tampil di depan.” Keempat larik berbunyi akhir -an dan membentuk urutan: latihan, berbagi peran, saling membantu, lalu siap tampil.']
+]}
+);
 const el=(tag,isi,cls)=>{
   const node=document.createElement(tag);
   if(isi) node.textContent=isi;
